@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" onsubmit="handlesubmit(event)" novalidate>
+        <input type="email" placeholder="email" id="email" required/>
+        <input type="password" placeholder="password" id="password" required/>
+
+        <button type="submit">Login</button>
+    </form>
+    <script>
+        function handlesubmit(event){
+            event.preventDefault();
+            const email=document.querySelector('#email').value;
+            const password=document.querySelector('#password').value;
+            if(email=='' || password==''){
+                alert('All fields are mandatory')
+            }else{
+                alert("Form submitted for approval")
+            }
+        }
+    </script>
+</body>
+</html>

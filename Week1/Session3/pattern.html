@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input"/>
+    <button onclick="show()">Show Pattern</button>
+    <div id="result"></div>
+    <script>
+        function show(){
+            const str=document.querySelector('#input').value;
+            if(str.length<5){
+                alert('enter 5 digit number')
+            }else{
+
+                let num= +str;
+                let result='';
+                let data=0;
+                while(num>0){
+                    let rem= num%10;
+                    data= data*10 + rem;
+                    result+= `<h3>${data}</h3>`;
+                    num= parseInt(num/10);
+                }
+                document.getElementById('result').innerHTML=result;
+                // const array= str.split('');
+                // console.log(array);
+                // let result='';
+                // for(let i=array.length-1;i>=0;i--){
+                //     let data=''
+                //     for(let j=array.length-1;j>=i;j--){
+                //         data+=array[j]+' ';
+                //     }
+                //     //console.log(data);
+                //     result+= `<h3>${data}</h3>`
+                // }
+                // document.getElementById('result').innerHTML= result
+            }
+            
+        }
+    </script>
+</body>
+</html>

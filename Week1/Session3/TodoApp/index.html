@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="todos"></ul>
+    <input type="text" placeholder="Enter your task" id="task">
+    <button onclick="addtask()">Add Task</button>
+    <script src="script.js"></script>
+    <script>
+        function addtask(){
+            const task= document.querySelector('#task');
+            addTodo({id: Date.now(), task: task.value, completed:false});
+            alert('Todo Added');
+            displayData();
+        }
+        function displayData(){
+            const array=getAllTodos();
+            let data=''
+            for(let t of array){
+                data+=`<li onclick='updateTodo(${t.id})' style='text-decoration: ${t.completed?'line-through':'none'}'
+                >${t.task} ${t.completed? 'Completed':'Pending'} 
+                <button onclick='removetask(${t.id})'>X</button>
+                </li>`
+            }
+            document.getElementById('todos').innerHTML=data;
+        }
+        function updateTodo(id){
+            completeTodo(id);
+            displayData();
+        } 
+        function removetask(id){
+            removeTodo(id);
+            displayData();
+        }   
+    </script>
+</body>
+</html>

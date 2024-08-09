@@ -1,0 +1,10 @@
+.nav-item{
+    margin-left: 20px;
+    font-size: 18px;
+}
+.nav-link{
+    color: white;
+}
+.active{
+    color: aqua !important;
+}

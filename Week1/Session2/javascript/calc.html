@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const num1 = + prompt('Enter first number');
+        const num2 = + prompt('Enter second number');
+        const op = prompt("Enter + for Addition - for Subtraction");
+
+        switch (op) {
+            case "+": document.write(`<h3>${num1}+${num2}= ${num1 + num2}</h3>`);
+                break;
+            case "-": document.write(`<h3>${num1}-${num2}= ${num1 - num2}</h3>`);
+                break;
+
+            default: document.write('<h3>Choose correct operator..</h3>')
+        }
+
+
+    </script>
+</body>
+
+</html>

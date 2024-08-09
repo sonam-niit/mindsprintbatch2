@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* All Childs */
+        /* div p{
+            background-color: aqua;
+        } */
+         /* Direct Child */
+        /* div>p{
+            background-color: brown;
+        } */
+         /* First Sibling */
+         /* div+p{
+            background-color: chocolate;
+         } */
+          /* All Siblings */
+          div~p{
+            background-color: coral;
+          }
+          div section p{
+            background-color: aqua;
+          }
+    </style>
+</head>
+<body>
+    <div>
+        <!-- Child of Div -->
+        <p>Direct Child</p>
+        <p>Direct Child.</p>
+        <section>
+            <p>Grand Child</p>
+            <p>Grand Child</p>
+            <p>Grand Child</p>
+        </section>
+    </div>
+    <p>First Siblings</p>
+    <p>Second Siblings</p>
+    <p>Thord Siblings</p>
+</body>
+</html>

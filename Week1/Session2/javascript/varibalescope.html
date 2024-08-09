@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function hello() {
+
+            
+            if (true) {
+                //block Scope
+                let a = 56;
+                var b = 78; //functonal scope
+                const c = 90;
+                console.log(`Inside Block let: ${a}`);
+                console.log(`Inside Block VAR: ${b}`);
+                console.log(`Inside Block const: ${c}`);
+            }
+            //console.log(`Outside Block let: ${a}`);
+            console.log(`Outside Block VAR: ${b}`);
+            //console.log(`Outside Block const: ${c}`);
+        }
+       
+        hello();
+    </script>
+</body>
+
+</html>

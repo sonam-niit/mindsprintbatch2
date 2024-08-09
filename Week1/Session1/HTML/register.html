@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Registeration Form</h1><hr>
+    <form>
+        <div>
+            <label for="name">Full Name</label>
+            <input type="text" placeholder="John Doe" id="name">
+        </div>
+        <div>
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" />
+        </div>
+        <div>
+            <label for="profile">Profile Picture</label>
+            <input type="file" id="profile"/>
+        </div>
+        <div>
+            <label for="gender">Gender</label>
+            <input type="radio" id="gender" value="male" name="gender">Male
+            <input type="radio" id="gender" value="female" name="gender" checked>Female
+            <input type="radio" id="gender" value="other" name="gender">Other
+        </div>
+        <div>
+            <label for="lang">Languages Known</label>
+            <input type="checkbox" id="check1" value="hindi">Hindi
+            <input type="checkbox" id="check2" value="eng" checked>English
+            <input type="checkbox" id="check3" value="tamil">Tamil
+        </div>
+        <div>
+            <label for="password">Password: </label>
+            <input type="password" id="password" placeholder="SECRET" />
+        </div>
+        <div>
+            <label for="fvcolor">Choose your color:</label>
+            <input type="color" id="fvcolor" value="#ff0000"/>
+        </div>
+        <div>
+            <label for="age">Age</label>
+            <input type="number" id="age" min="18" max="58" />
+        </div>
+        <div>
+            <label for="percent">Percentage Range</label>
+            <input type="range" id="percent" min="0" max="100" value="60">
+        </div>
+        <div>
+            <input type="submit" value="Register" >
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+</body>
+
+</html>
