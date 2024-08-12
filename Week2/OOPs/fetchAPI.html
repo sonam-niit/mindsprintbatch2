@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="posts"></div>
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/todos')
+            .then(response => response.json())
+            .then(json =>{ 
+                let data=''
+                for(let p of json){
+                    data+= `<h3>${p.id} ${p.title} Status: ${p.completed?'completed':'pending'} </h3>`
+                }
+                document.querySelector('#posts').innerHTML=data;
+            })
+            .catch(err => console.log(err))
+    </script>
+</body>
+
+</html>
