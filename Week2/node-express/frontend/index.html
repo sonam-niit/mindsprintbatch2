@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead><tr><th>ID</th><th>Name</th><th>Email</th></tr></thead>
+        <tbody id="tbody"></tbody>
+    </table>
+    <form onsubmit="updateUser(event)" style="display: none;" id="editform">
+        <input type="text" id="id" readonly/>
+        <input type="text" id="name" />
+        <input type="email" id="email" />
+        <input type="submit" value="Update Data" />
+    </form>
+    <script>
+        async function fetchData(){
+            const resp= await fetch('http://localhost:5000/api/customers');
+            const json= await resp.json();
+            let data=''
+            for(let u of json){
+                data+=`<tr>
+                    <td>${u.id}</td>
+                    <td>${u.name}</td>
+                    <td>${u.email}</td>
+                    <button onclick="editData(${u.id})">edit</button>
+                    </tr>`
+            }
+            document.getElementById('tbody').innerHTML=data
+        }
+        fetchData();
+        async function editData(id){
+            const resp= await fetch('http://localhost:5000/api/customers/'+id);
+            const user= await resp.json();
+            document.getElementById('editform').style.display='block';
+            document.querySelector('#id').value=user.id;
+            document.querySelector('#name').value=user.name;
+            document.querySelector('#email').value=user.email;
+        }
+        async function updateUser(event) {
+            event.preventDefault();
+            const id=document.querySelector('#id').value;
+            const name=document.querySelector('#name').value;
+            const email=document.querySelector('#email').value;
+            const resp= await fetch('http://localhost:5000/api/customers/'+id,{
+                method:'PUT',
+                body: JSON.stringify({name,email}),
+                headers:{"content-type":'application/json'}
+            })
+            console.log(resp);
+            if(resp.status==200){
+                alert('User Updated successfully')
+            }else{
+                alert('error while updation')
+            }
+            fetchData();
+            document.getElementById('editform').style.display='none';
+        }
+    </script>
+</body>
+</html>
