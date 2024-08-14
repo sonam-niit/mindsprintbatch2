@@ -1,0 +1,27 @@
+[
+    {
+        "id":1,
+        "name":"laptop",
+        "price":67000,
+        "rating":4.6
+    },
+    {
+        "id":2,
+        "name":"Iphone",
+        "price":99999,
+        "rating":4.9
+    },
+    {
+        "id":3,
+        "name":"headphone",
+        "price":999,
+        "rating":4.3
+    },
+    {
+        "id":4,
+        "name":"Mac Book",
+        "price":199999,
+        "rating":4.5
+    }
+
+]
