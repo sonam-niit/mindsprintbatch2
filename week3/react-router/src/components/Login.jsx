@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Login() {
+function Login({setLoggedIn}) {
 
-    const [user, setUser] = useState({ email: '', password: '' });
+    const [user, setUser] = useState({ email: 'admin@gmail.com', password: 'admin123' });
     const navigate = useNavigate();
     const handleLogin = (e) => {
         e.preventDefault();
         if(user.email==="admin@gmail.com" && user.password==="admin123"){
             localStorage.setItem('loggedIn',true);
+            setLoggedIn(true);
             navigate('/dashboard');
         }else{
             alert("Invalid Credentials");
