@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="hello" class="org.example.Hello"/>
+    <bean id="stu1" class="org.example.Student">
+        <property name="id" value="3"/>
+        <property name="name" value="alex"/>
+        <property name="email" value="alex@gmail.com"/>
+        <property name="address" ref="add1"/>
+    </bean>
+    <bean id="add1" class="org.example.Address">
+        <property name="street" value="test"/>
+        <property name="city" value="mumbai"/>
+        <property name="zipcode" value="123456"/>
+    </bean>
+<!--    <bean id="stu2" class="org.example.Student">-->
+<!--        <constructor-arg name="id" value="1" />-->
+<!--        <constructor-arg name="name" value="test" />-->
+<!--        <constructor-arg name="email" value="test@gmail.com" />-->
+<!--    </bean>-->
+
+</beans>

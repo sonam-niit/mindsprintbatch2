@@ -1,4 +1,4 @@
-package com.mindsprint.ems;
+package org.example;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
