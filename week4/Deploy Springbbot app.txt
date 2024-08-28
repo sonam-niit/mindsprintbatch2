@@ -1,0 +1,29 @@
+Connect to your ubuntu instance
+sudo apt install git (install git)
+git --version (check git version)
+git clone paste-git-link (paste your project link which is uploaded on GitHub) 
+
+ls (check the list of files and folders)
+cd springproject (move to springboot project)
+
+------------------------install maven and java-------------------------
+sudo apt update	
+sudo apt install openjdk-17-jdk openjdk-17-jre
+java -version
+sudo apt install maven
+mvn -version
+
+mvn clean install (it will create jar file)
+ls (you can see target folder which includes jar file)
+cd target
+ls (you can see jar file)
+
+java -jar nameofyourjarfile
+
+check the output
+
+public ip of your instance : portno /mapping of your controller
+
+192.168.10.20:8080/api/employee
+
+
