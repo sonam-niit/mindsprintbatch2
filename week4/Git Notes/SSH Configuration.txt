@@ -1,0 +1,21 @@
+Generating Key
+ssh-keygen -t rsa -b 4096 -C "sonam.gravity@gmail.com"
+
+starting agent in the background
+eval $(ssh-agent -s)  
+
+set up private key ass ssh-client
+ssh-add ~/.ssh/id_rsa
+(it will ask you to enter passphrase)
+
+(copy public key for adding it to GitHub)
+clip < ~/.ssh/id_rsa.pub
+
+GitHub --> settings --> SSH & GPG key --> add new SSH key and paste the copied key
+
+Once its configured you can set origin with ssh command rather that using https and that it.
+You can push code on GitHub directly using ssh.
+
+so your origin setup look like this: git remote add origin git@github.com:sonam-niit/TestSSH.git
+
+

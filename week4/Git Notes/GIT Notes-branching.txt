@@ -1,0 +1,23 @@
+		GIT Branching
+	Branching helps people to work on different contexts.
+
+	Default branch is Master branch.
+
+	HEAD
+	HEAD-->Master
+
+	HEAD refers to the current location (branch) we are working on.
+
+	To show our current branches use the following command
+	git branch
+
+	To create branch use the following command
+	git branch bugfix
+
+	To switch to a branch use the following command
+	git checkout bugfix
+
+	Merging
+	To merge a branch to another branch switch to the receiving branch then merge
+	git checkout master
+	git merge bugfix
